@@ -37,9 +37,9 @@ public class FunkoService(
     // READ
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoService.GetFunkoByIdAsync(string, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.GetFunkoByIdAsync(long, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> GetFunkoByIdAsync( 
-        string id,
+        long id,
         CancellationToken ct)
     {
         // Llave para buscar en caché
@@ -133,9 +133,9 @@ public class FunkoService(
     // UPDATE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoService.UpdateFunkoAsync(string, FunkoUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateFunkoAsync(long, FunkoUpdateRequestDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateFunkoAsync(
-        string id,
+        long id,
         FunkoUpdateRequestDto request,
         CancellationToken ct = default)
     {
@@ -160,9 +160,9 @@ public class FunkoService(
                     "[SERVICE-UPDATE] No se encontró el Funko con ID {Id}.",
                     id));
     }
-    /// <inheritdoc cref="IFunkoService.UpdateCategoryFromAsync(string, CategoryUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateCategoryFromAsync(long, CategoryUpdateRequestDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(
-        string id,
+        long id,
         CategoryUpdateRequestDto request,
         CancellationToken ct = default)
     {
@@ -189,10 +189,10 @@ public class FunkoService(
                     "[SERVICE-UPDATECATEGORY] No se encontró el Funko con ID {Id}.",
                     id));
     }
-    /// <inheritdoc cref="IFunkoService.UpdateSupplierFromFunko(string, string, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateSupplierFromFunko(long, SupplierUpdateRequestDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(
-        string id,
-        string supplierId,
+        long id,
+        SupplierUpdateRequestDto request,
         CancellationToken ct = default)
     {
         string key = $"FUNKO:{id}";
@@ -200,11 +200,11 @@ public class FunkoService(
             "[SERVICE-UPDATECATEGORY] Intentando actualizar la categoría del Funko con el ID {Id}.",
             id);
         // Verificar si existe el proveedor
-        if(!await _repository.ExistSupplierByIdAsync(supplierId, ct))
+        if(!await _repository.ExistSupplierByIdAsync(request.Id, ct))
             return Result.Failure<FunkoDto, DomainError>(
-                NotFoundError.FromResource("Supplier", supplierId));
+                NotFoundError.FromResource("Supplier", request.Id));
         // Actualizar en la base de datos
-        var response = await _repository.UpdateSuplierFromFunkoAsync(id, supplierId, ct);
+        var response = await _repository.UpdateSuplierFromFunkoAsync(id, request, ct);
         if(response is not null) // solo si lo encontró
         {// Invalidar en caché
             await _cache.RemoveAsync(key);
@@ -228,9 +228,9 @@ public class FunkoService(
     // DELETE / RESTORE
     // =========================================================
 
-    /// <inheritdoc cref="IFunkoService.DeleteFunkoAsync(string, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.DeleteFunkoAsync(long, CancellationToken)"/>
     public async Task<Result<bool, DomainError>> DeleteFunkoAsync(
-        string id,
+        long id,
         CancellationToken ct = default)
     {
         string key = $"FUNKO:{id}";
@@ -257,9 +257,9 @@ public class FunkoService(
                     id));
     }
 
-    /// <inheritdoc cref="IFunkoService.RestoreDeletedFunkoAsync(string, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.RestoreDeletedFunkoAsync(long, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> RestoreDeletedFunkoAsync(
-        string id,
+        long id,
         CancellationToken ct = default)
     {
         _logger.LogDebug(

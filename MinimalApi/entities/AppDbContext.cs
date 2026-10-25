@@ -2,36 +2,16 @@ using System.ComponentModel.DataAnnotations;
 using System.IO.Compression;
 using Microsoft.EntityFrameworkCore;
 
-public class AppDbContext : DbContext
+public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
     public DbSet<Funko> Funkos {get; set;}
     public DbSet<Supplier> Suppliers {get; set;}
-    public AppDbContext(DbContextOptions<AppDbContext> options)
-        : base(options)
-    {
-        // Para solucionar problemas con el ensurecreate
-        // ya que da error por las transacciones
-        Database.AutoTransactionBehavior = AutoTransactionBehavior.Never;
-    }
+    public DbSet<Category> Categories {get; set;}
 
      protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
-         switch (AppConfig.Environment.ToLowerInvariant())
-        {
-            case "postgre":
-                PosgreContextConfiguration.Configure(modelBuilder);
-                break;
-
-            case "mongoef":
-                MongoContextConfiguration.Configure(modelBuilder);
-                break;
-
-            default:
-                throw new InvalidOperationException(
-                    $"Entorno no soportado: {AppConfig.Environment}");
-        }
+        PosgreContextConfiguration.Configure(modelBuilder);
     }
     
 }

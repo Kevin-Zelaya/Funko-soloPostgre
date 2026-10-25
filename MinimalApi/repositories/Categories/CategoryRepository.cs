@@ -9,9 +9,8 @@ public class CategoryPostgreRepository(
         CancellationToken ct
     )
     {
-        return await _context.Funkos
+        return await _context.Categories
                     .AsNoTracking()
-                    .Select(f => f.Category)
                     .ToListAsync(ct);
     }
     /// <inheritdoc cref="ICategoryRepository.GetPaginatedCategoriesAsync(int, int, CancellationToken)"/>
@@ -30,9 +29,8 @@ public class CategoryPostgreRepository(
     )
     {
         
-        var response =  await _context.Funkos
+        var response =  await _context.Categories
                     .AsNoTracking()
-                    .Select(f => f.Category)
                     .Skip((pageNumber - 1) * pageSize)
                     .Take(pageSize)
                     .ToListAsync(ct);
@@ -58,9 +56,8 @@ public class CategoryPostgreRepository(
         CancellationToken ct
     )
     {
-        return await _context.Funkos
+        return await _context.Categories
                         .AsNoTracking()
-                        .Select(f => f.Category)
                         .FirstOrDefaultAsync(c => c.Name == name, ct);
     }
 }

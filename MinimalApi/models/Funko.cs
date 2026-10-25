@@ -1,12 +1,13 @@
 public class Funko
 {
-    public string Id { get; set; } = string.Empty;
+    public long Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Franchise { get; set; } = string.Empty;
     public int Number { get; set; }
     public string SupplierId {get; set;} = string.Empty;
     public Supplier? Supplier{get; set;}
-    public Category Category { get; set; } = new();
+    public Guid CategoryId {get; set;}
+    public Category Category { get; set; }
     public bool Exclusive { get; set; }
     public double Price { get; set; }
     public bool IsDelete {get; set;}

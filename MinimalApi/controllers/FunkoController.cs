@@ -30,7 +30,7 @@ public class FunkoController(
     /// </summary>
     [HttpGet("{id}")]
     public async Task<ActionResult> GetFunkoById(
-        string id,
+        long id,
         CancellationToken ct)
     {
         var funko = await _service.GetFunkoByIdAsync(id, ct);
@@ -84,7 +84,7 @@ public class FunkoController(
     /// </summary>
     [HttpPut("{id}")]
     public async Task<ActionResult<FunkoDto>> UpdateFunko(
-        string id,
+        long id,
         [FromBody] FunkoUpdateRequestDto dto,
         CancellationToken ct)
     {
@@ -100,7 +100,7 @@ public class FunkoController(
     /// </summary>
     [HttpPatch("{id}/category")]
     public async Task<ActionResult<FunkoDto>> UpdateCategoryFromFunko(
-        string id,
+        long id,
         [FromBody] CategoryUpdateRequestDto dto,
         CancellationToken ct)
     {
@@ -116,12 +116,12 @@ public class FunkoController(
     /// </summary>
     [HttpPatch("{id}/supplier/{supplierId}")]
     public async Task<ActionResult<FunkoDto>> UpdateSupplierFromFunko(
-        string id,
-        string supplierId,
+        long id,
+        SupplierUpdateRequestDto request,
         CancellationToken ct)
     {
         var response = await _service.UpdateSupplierFromFunko(
-            id, supplierId, ct);
+            id, request, ct);
 
         return response.IsSuccess
             ? Ok(response.Value)
@@ -137,7 +137,7 @@ public class FunkoController(
     /// </summary>
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteFunko(
-        string id,
+        long id,
         CancellationToken ct)
     {
         var response = await _service.DeleteFunkoAsync(id, ct);
@@ -152,7 +152,7 @@ public class FunkoController(
     /// </summary>
     [HttpPatch("{id}/restore")]
     public async Task<ActionResult<FunkoDto>> RestoreFunko(
-        string id,
+        long id,
         CancellationToken ct)
     {
         var response = await _service.RestoreDeletedFunkoAsync(id, ct);

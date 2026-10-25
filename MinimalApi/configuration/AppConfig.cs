@@ -2,11 +2,7 @@ public static class AppConfig
 {
     static AppConfig()
     {
-        Environment = 
-            System.Environment
-                .GetEnvironmentVariable("DOTNET_ENVIRONMENT")?
-                .ToLowerInvariant() 
-            ?? "postgre";
+        Environment = "postgre";
             
         Configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)

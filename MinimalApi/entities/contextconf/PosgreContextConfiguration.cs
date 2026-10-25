@@ -9,7 +9,9 @@ public abstract class PosgreContextConfiguration
         Log.Debug("[DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'");
         modelBuilder.Entity<Funko>(entity =>
         {
+            ///<summary> Generar id </summary>
             entity.HasKey(u => u.Id);
+            entity.Property(u => u.Id).ValueGeneratedOnAdd();
 
             ///<summary> Nombre como indice </summary>
             entity.HasIndex(p => p.Name)
@@ -35,17 +37,15 @@ public abstract class PosgreContextConfiguration
             entity.Property(p => p.DeleteAT).IsRequired(false).HasDefaultValue(null);
             ///<summary> Versión de la fila para control de concurrencia </summary>
             entity.Property(s => s.RowVersion).IsRowVersion();
-            //<summary> Conversión de categoría a json </summary>
-            entity.ComplexProperty(
-                f => f.Category,
-                category => Microsoft.EntityFrameworkCore.RelationalComplexPropertyBuilderExtensions
-                    .ToJson(category)
-            );
 
-            //<summary> Relación con categoria </summary>
+            //<summary> Relación con proveedor </summary>
             entity.HasOne(f => f.Supplier)
                 .WithMany(s => s.Funkos)
                 .HasForeignKey(f => f.SupplierId);
+            //<summary> Relación con categoria </summary>
+            entity.HasOne(f => f.Category)
+                .WithMany(c => c.Funkos)
+                .HasForeignKey(f => f.CategoryId);
 
             entity.HasQueryFilter(f => !f.IsDelete);
         });
@@ -91,6 +91,56 @@ public abstract class PosgreContextConfiguration
             Log.Information(
                 "[MONGODB] Se han insertado {Count} proveedores iniciales",
                 10);
+        });
+        modelBuilder.Entity<Category>(entity =>
+        {
+            ///<summary> UUID como id </summary>
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Id)
+                .HasValueGenerator<GuidValueGenerator>()
+                .ValueGeneratedOnAdd();
+            ///<summary> Nombre requerido </summary>
+            entity.Property(e => e.Name).IsRequired();
+
+
+            entity.HasData(
+                new Category
+                {
+                    Id = Guid.Parse("a1000000-0000-0000-0000-000000000001"),
+                    Name = "Anime",
+                    Description = "Figuras Funko de series y películas de anime."
+                },
+                new Category
+                {
+                    Id = Guid.Parse("a1000000-0000-0000-0000-000000000002"),
+                    Name = "Marvel",
+                    Description = "Figuras Funko de superhéroes y personajes de Marvel."
+                },
+                new Category
+                {
+                    Id = Guid.Parse("a1000000-0000-0000-0000-000000000003"),
+                    Name = "DC Comics",
+                    Description = "Figuras Funko de héroes y villanos de DC Comics."
+                },
+                new Category
+                {
+                    Id = Guid.Parse("a1000000-0000-0000-0000-000000000004"),
+                    Name = "Disney",
+                    Description = "Figuras Funko de personajes clásicos y modernos de Disney."
+                },
+                new Category
+                {
+                    Id = Guid.Parse("a1000000-0000-0000-0000-000000000005"),
+                    Name = "Videojuegos",
+                    Description = "Figuras Funko de personajes del mundo de los videojuegos."
+                },
+                new Category
+                {
+                    Id = Guid.Parse("a1000000-0000-0000-0000-000000000006"),
+                    Name = "Películas y series",
+                    Description = "Figuras Funko de películas y series de televisión."
+                }
+            );
         });
     }
     

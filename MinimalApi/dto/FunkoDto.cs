@@ -10,7 +10,7 @@
 /// <param name="exclusivom"></param>
 /// <param name="precio"></param>
 public record FunkoDto(
-    string Id,
+    long Id,
     string Name,
     string Franchise,
     int Number,
@@ -29,6 +29,7 @@ public record FunkoDto(
 /// <param name="Name"></param>
 /// <param name="Description"></param>
 public record CategoryDto(
+    Guid Id,
     string Name,
     string Description
 );

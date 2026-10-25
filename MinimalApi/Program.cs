@@ -39,7 +39,7 @@ app.UseGlobalExceptionHandler();
 app.MapControllers();
 // ======= Inicializar estructura y db en caso de postgre ========== 
 if(AppConfig.shouldRecreateDb)
-    await app.InitializationDatabaseAsync(AppConfig.Environment);
+    await app.InitializationDatabaseAsync();
 
 // Falta vaciar la bd en el caso de mongo
 Console.WriteLine("======================================================");

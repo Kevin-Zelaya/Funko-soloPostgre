@@ -31,7 +31,7 @@ public record FunkoCreateRequestDto(
     string SupplierId,
 
     [param: Required(ErrorMessage = "Categoría requerida")]
-    CategoryUpdateRequestDto Category,
+    Guid CategoryId,
 
     bool Exclusive,
 
@@ -47,13 +47,15 @@ public record FunkoCreateRequestDto(
 /// <param name="Description"></param>
 public record CategoryUpdateRequestDto(
 
-    [param: Required(ErrorMessage = "Nombre requerido")]
-    [param: MinLength(2)]
-    [param: MaxLength(100)]
-    string Name,
+    [param: Required(ErrorMessage = "Id requerido")]
+    Guid Id,
+    [param: Required(ErrorMessage = "RowVersion requerido")]
+    uint RowVersion
+);
 
-    [param: Required(ErrorMessage = "Descripción requerida")]
-    [param: MinLength(2)]
-    [param: MaxLength(100)]
-    string Description
+public record SupplierUpdateRequestDto(
+    [param: Required(ErrorMessage = "Id requerido")]
+    string Id,
+    [param: Required(ErrorMessage = "RowVersion requerido")]
+    uint RowVersion
 );

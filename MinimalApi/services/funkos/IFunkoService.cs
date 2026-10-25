@@ -17,7 +17,7 @@ public interface IFunkoService
     /// <param name="id">Id del funko a obtener</param>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko solicitado</returns>
-    Task<Result<FunkoDto, DomainError>> GetFunkoByIdAsync(string id, CancellationToken ct);
+    Task<Result<FunkoDto, DomainError>> GetFunkoByIdAsync(long id, CancellationToken ct);
     /// <summary>
     /// Actualizar funko mediante
     /// dto de actualización
@@ -29,7 +29,7 @@ public interface IFunkoService
     /// <see cref="FunkoUpdateRequestDto"/>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public Task<Result<FunkoDto, DomainError>> UpdateFunkoAsync(string id, FunkoUpdateRequestDto request, CancellationToken ct = default);
+    public Task<Result<FunkoDto, DomainError>> UpdateFunkoAsync(long id, FunkoUpdateRequestDto request, CancellationToken ct = default);
     /// <summary>
     /// Actualizar categoría del
     /// funko
@@ -39,7 +39,7 @@ public interface IFunkoService
     /// <see cref="CategoryUpdateRequestDto"/>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(string id, CategoryUpdateRequestDto request, CancellationToken ct = default);
+    public Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(long id, CategoryUpdateRequestDto request, CancellationToken ct = default);
     /// <summary>
     /// Actualizar proveedor de
     /// funko
@@ -48,7 +48,7 @@ public interface IFunkoService
     /// <param name="SupplierId">Id del proveedor</param>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(string id, string SupplierId, CancellationToken ct = default);
+    public Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(long id, SupplierUpdateRequestDto SupplierId, CancellationToken ct = default);
     /// <summary>
     /// Obtener lista completa de funkos
     /// se utiliza para pruebas, en producción
@@ -70,13 +70,13 @@ public interface IFunkoService
     /// <param name="id">id del funko a eliminar</param>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>True o false dependiendo del resultado</returns>
-    public Task<Result<bool, DomainError>> DeleteFunkoAsync(string id, CancellationToken ct);
+    public Task<Result<bool, DomainError>> DeleteFunkoAsync(long id, CancellationToken ct);
     /// <summary>
     /// Restaurar funko eliminado a partir de su id
     /// </summary>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko restaurada</returns>
-    public Task<Result<FunkoDto, DomainError>> RestoreDeletedFunkoAsync(string id, CancellationToken ct);
+    public Task<Result<FunkoDto, DomainError>> RestoreDeletedFunkoAsync(long id, CancellationToken ct);
     /// <summary>
     /// Auxiliar para obtener las categorias
     /// </summary>

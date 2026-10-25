@@ -4,11 +4,7 @@ public static class FunkoMapper
     public static Funko ToModel(this FunkoCreateRequestDto dto) => new()
     {
         Name = dto.Name,
-        Category = new Category
-        {
-            Name = dto.Category.Name,
-            Description = dto.Category.Description
-        },
+        CategoryId = dto.CategoryId,
         Exclusive = dto.Exclusive,
         Number = dto.Number,
         SupplierId = dto.SupplierId,
@@ -35,6 +31,7 @@ public static class FunkoMapper
         Id: entity.Id,
         Name: entity.Name,
         Category: new CategoryDto(
+            Id: entity.Category.Id,
             Name: entity.Category.Name,
             Description: entity.Category.Description
         ),
@@ -59,6 +56,7 @@ public static class FunkoMapper
         Name: entity.Name
     );
     public static CategoryDto ToDto(this Category category) => new(
+        Id: category.Id,
         Name: category.Name,
         Description: category.Description
     );
