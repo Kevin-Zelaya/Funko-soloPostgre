@@ -1,0 +1,24 @@
+info:
+  name: UPDATE_CATEGORY_FUNKO
+  type: http
+  seq: 8
+
+http:
+  method: PATCH
+  url: http://localhost:5205/api/funkos/1/category
+  body:
+    type: json
+    data: |-
+      {
+        "id": 1,
+        "name": "Superhéroes",
+        "description": "Personajes heroicos de Marvel y otras franquicias"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

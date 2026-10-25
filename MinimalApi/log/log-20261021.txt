@@ -1,0 +1,89 @@
+2026-10-21 13:30:25.809 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 13:30:26.262 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 13:30:26.323 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 13:31:05.215 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 13:31:05.256 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 13:31:05.270 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 13:31:45.999 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 13:31:46.043 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 13:31:46.058 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+<<<<<<< HEAD
+2026-10-21 13:32:08.560 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 13:32:08.603 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 13:32:08.618 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 13:32:09.187 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-21 13:32:09.473 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-21 13:32:09.597 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 13:32:10.309 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-21 13:32:40.443 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-21 13:32:40.505 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-21 13:32:40.816 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-21 13:32:58.445 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-21 13:32:58.720 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:08.884 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:08.954 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente.
+2026-10-21 13:33:19.215 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:19.223 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente desde la cache.
+2026-10-21 13:33:19.235 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente.
+2026-10-21 13:33:51.595 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad8a2ea8d4a302a578a0640.
+2026-10-21 13:33:51.597 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente desde la cache.
+2026-10-21 13:33:51.604 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad8a2ea8d4a302a578a0640 recuperado correctamente.
+=======
+2026-10-21 16:54:17.279 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 16:54:18.100 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 16:54:18.265 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 16:54:19.739 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-21 16:54:20.291 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-21 16:54:20.494 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 16:54:21.883 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-21 17:10:48.933 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 17:10:49.010 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 17:10:49.038 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 17:10:50.236 [DBG] [] [MONGOEF] Eliminando y recreando la base de datos
+2026-10-21 17:10:50.684 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-21 17:10:51.371 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-21 17:14:56.505 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-21 17:14:56.664 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-21 17:14:57.714 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 0 proveedores de la página 1 de 0.
+2026-10-21 17:15:48.943 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 17:15:49.035 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 17:15:49.063 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 17:15:49.804 [DBG] [] [MONGOEF] Eliminando y recreando la base de datos
+2026-10-21 17:15:50.236 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-21 17:15:50.300 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 17:20:54.313 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 17:20:54.399 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 17:20:54.438 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 17:20:55.407 [DBG] [] [MONGOEF] Eliminando y recreando la base de datos
+2026-10-21 17:20:55.747 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-21 17:20:55.777 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 17:28:22.320 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 17:28:22.389 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 17:28:22.411 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 17:28:22.904 [DBG] [] [MONGOEF] Eliminando y recreando la base de datos
+2026-10-21 17:28:23.181 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-21 17:28:23.217 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 17:28:23.885 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-21 17:28:39.041 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-21 17:28:39.117 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-21 17:28:39.696 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-21 17:32:40.672 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-21 17:33:48.275 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-21 17:33:51.049 [DBG] [SupplierService] [SERVICE-GETSUPPLIERS] Recuperando todos los proveedores.
+2026-10-21 17:33:51.127 [INF] [SupplierService] [SERVICE-GETSUPPLIERS] Se recuperaron 10 proveedores.
+2026-10-21 17:39:34.763 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-21 17:39:34.828 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-21 17:39:34.849 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-21 17:39:35.374 [DBG] [] [MONGOEF] Eliminando y recreando la base de datos
+2026-10-21 17:39:35.659 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-21 17:39:35.681 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-21 17:39:36.443 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-21 17:39:44.807 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-21 17:39:44.880 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 6ad8da177b130a87c4900993.
+2026-10-21 17:39:55.406 [DBG] [SupplierService] [SERVICE-GETSUPPLIERS] Recuperando todos los proveedores.
+2026-10-21 17:39:55.555 [INF] [SupplierService] [SERVICE-GETSUPPLIERS] Se recuperaron 10 proveedores.
+2026-10-21 17:40:07.869 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 6ad8dcb79d328462fd5668fe.
+2026-10-21 17:40:07.911 [INF] [SupplierService] [SERVICE-GETSUPPLIER] Proveedor con ID 6ad8dcb79d328462fd5668fe recuperado correctamente.
+2026-10-21 17:40:16.667 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 6ad8dcb79d328462fd5668fe.
+2026-10-21 17:40:16.680 [INF] [SupplierService] [SUPPLIERS-GET] Proveedor con ID 6ad8dcb79d328462fd5668fe recuperado correctamente desde la caché.
+>>>>>>> 0b05fd37051c231c5c657439df5110b9951ac1f8

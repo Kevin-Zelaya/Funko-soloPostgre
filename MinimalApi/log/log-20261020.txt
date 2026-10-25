@@ -1,0 +1,380 @@
+2026-10-20 08:09:06.327 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 08:09:06.742 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 08:09:06.815 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 08:11:41.099 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 08:11:41.342 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 08:11:41.569 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-20 08:11:42.505 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad7061e0c30b7a690a36d00.
+2026-10-20 08:12:16.758 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 1.
+2026-10-20 08:12:16.877 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "1")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "1")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-20 08:12:16.895 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 9cc4c3b0
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "1")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FunkoService.GetFunkoByIdAsync(String id, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 46
+   at FunkoController.GetFunkoById(String id, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 37
+   at lambda_method189(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-20 08:12:30.788 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad7061e0c30b7a690a36d00.
+2026-10-20 08:12:30.846 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-20 08:12:30.854 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 22595acd
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FunkoService.GetFunkoByIdAsync(String id, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 46
+   at FunkoController.GetFunkoById(String id, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 37
+   at lambda_method189(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-20 08:12:39.340 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad7061e0c30b7a690a36d00.
+2026-10-20 08:12:39.347 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-20 08:12:39.352 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 165c5e63
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FunkoService.GetFunkoByIdAsync(String id, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 46
+   at FunkoController.GetFunkoById(String id, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 37
+   at lambda_method189(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-20 08:12:55.795 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad7061e0c30b7a690a36d00.
+2026-10-20 08:12:55.800 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-20 08:12:55.804 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: a0fda518
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad7061e0c30b7a690a36d00")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at FunkoService.GetFunkoByIdAsync(String id, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 46
+   at FunkoController.GetFunkoById(String id, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 37
+   at lambda_method189(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-20 09:10:56.148 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 09:10:56.184 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 09:10:56.199 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 09:12:18.769 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 09:12:18.818 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 09:12:18.836 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 09:12:35.472 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 09:12:35.607 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 09:12:35.796 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-20 09:12:36.468 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad71464bf0a560ffb81043b.
+2026-10-20 09:12:58.125 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad71464bf0a560ffb81043b.
+2026-10-20 09:12:58.208 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad71464bf0a560ffb81043b")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad71464bf0a560ffb81043b")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-20 09:12:58.224 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: de8de18a
+MongoDB.Driver.Linq.ExpressionNotSupportedException: Expression not supported: tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))) in tienda.funkos.Aggregate([]).As(value(MongoDB.EntityFrameworkCore.Serializers.EntitySerializer`1[Funko])).Where(f => Not(Field(f, "IsDelete", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))).Where(f => (Field(f, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)) == "6ad71464bf0a560ffb81043b")).Join(tienda.suppliers.Aggregate([]).Where(s => Not(Field(s, "IsDeleted", value(MongoDB.Bson.Serialization.Serializers.BooleanSerializer)))), f => Field(f, "SupplierId", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), s => Field(s, "_id", value(MongoDB.Bson.Serialization.Serializers.StringSerializer)), (o, i) => new LeftJoinResult`2(o, i)) because expression must be a MongoDB IQueryable against a collection.
+   at MongoDB.Driver.Linq.Linq3Implementation.ExtensionMethods.ExpressionExtensions.GetCollectionInfoFromQueryable(Expression queryableExpression, Expression containerExpression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.JoinMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.AsMethodToPipelineTranslator.Translate(TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToPipelineTranslators.ExpressionToPipelineTranslator.Translate(TranslationContext context, Expression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.FirstMethodToExecutableQueryTranslator`1.Translate[TDocument](MongoQueryProvider`1 provider, TranslationContext context, MethodCallExpression expression)
+   at MongoDB.Driver.Linq.Linq3Implementation.Translators.ExpressionToExecutableQueryTranslators.ExpressionToExecutableQueryTranslator.TranslateScalar[TDocument,TResult](MongoQueryProvider`1 provider, Expression expression, ExpressionTranslationOptions translationOptions)
+   at MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1.Execute[TResult](Expression expression)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+   at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at PosgreRepository.GetFunkoByIdAsync(String id, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\funkos\FunkoPostgreRepository.cs:line 46
+   at FunkoService.GetFunkoByIdAsync(String id, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 46
+   at FunkoController.GetFunkoById(String id, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 37
+   at lambda_method189(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-20 09:14:29.814 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 09:14:29.854 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 09:14:29.871 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 09:14:33.938 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 09:14:34.122 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 09:14:34.326 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-20 09:14:35.054 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad714dabb3795e2f67f93ce.
+2026-10-20 09:14:40.417 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad714dabb3795e2f67f93ce.
+2026-10-20 09:14:40.474 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad714dabb3795e2f67f93ce recuperado correctamente.
+2026-10-20 09:14:45.877 [DBG] [FunkoService] [SERVICE-GETPAGINATED] Recuperando página 1 con tamaño 5.
+2026-10-20 09:14:45.949 [INF] [FunkoService] [SERVICE-GETPAGINATED] Se recuperaron 4 Funkos de la página 1.
+2026-10-20 09:16:15.419 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 09:16:15.459 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 09:16:15.472 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 09:16:15.674 [WRN] [] [MONGODB] Eliminando base de datos de pruebas
+2026-10-20 09:16:15.911 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-20 09:16:15.915 [INF] [] [MONGODB] Base de datos reinicializada
+2026-10-20 09:16:28.113 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 09:16:28.248 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 09:16:28.451 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-20 09:16:43.066 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 09:16:52.289 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 1.
+2026-10-20 09:16:55.579 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-20 09:16:55.641 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-20 09:17:11.374 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 09:17:11.530 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad71577673eaff639a2d25c.
+2026-10-20 09:19:16.322 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 09:19:16.362 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 09:19:16.377 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 09:19:16.568 [WRN] [] [MONGODB] Eliminando base de datos de pruebas
+2026-10-20 09:19:16.805 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-20 09:19:16.818 [INF] [] [MONGODB] Base de datos reinicializada
+2026-10-20 09:19:48.393 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 09:19:48.507 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-20 09:19:48.708 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-20 09:19:49.101 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-20 09:20:22.796 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-20 09:20:23.029 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad716368d5ae59938ef8609.
+2026-10-20 09:20:45.258 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 6ad716368d5ae59938ef8609.
+2026-10-20 09:20:45.344 [INF] [FunkoService] [SERVICE-GET] Funko con ID 6ad716368d5ae59938ef8609 recuperado correctamente.
+2026-10-20 09:22:09.990 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 09:22:10.028 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 09:22:10.042 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 09:22:10.232 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-20 09:22:10.492 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-20 09:22:10.530 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-20 09:22:11.269 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-20 13:19:44.308 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 13:19:44.711 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 13:19:44.775 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 13:19:45.310 [WRN] [] [MONGODB] Eliminando base de datos de pruebas
+2026-10-20 13:19:45.550 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-20 13:19:45.555 [INF] [] [MONGODB] Base de datos reinicializada
+2026-10-20 13:29:22.738 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-20 17:09:24.264 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 17:09:24.980 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 17:09:25.110 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 17:09:26.225 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-20 17:09:26.683 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-20 17:09:27.982 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-20 17:11:45.869 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-20 17:11:45.955 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-20 17:11:45.991 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-20 17:11:46.356 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-20 17:11:46.811 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-20 17:11:46.883 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-20 17:11:48.149 [INF] [] [POSGRE] Eliminando y recreando la base de datos

@@ -1,0 +1,216 @@
+2026-10-22 08:36:52.524 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 08:36:52.971 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 08:36:53.028 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 08:36:53.625 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 08:36:53.945 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 08:36:54.043 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 08:36:54.688 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 08:37:49.500 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 08:37:49.540 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 08:37:49.554 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 08:37:49.822 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 08:37:50.086 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 08:37:50.121 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 08:37:50.661 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 08:38:13.952 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 08:38:14.024 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 08:38:14.353 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-22 08:38:26.919 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:38:27.175 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:18.755 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:18.847 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9af62ed48a8479029cc69 actualizado correctamente.
+2026-10-22 08:39:27.361 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:27.374 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9af62ed48a8479029cc69
+2026-10-22 08:39:27.377 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9af62ed48a8479029cc69 actualizado correctamente.
+2026-10-22 08:39:33.284 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:33.289 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9af62ed48a8479029cc69
+2026-10-22 08:39:33.290 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9af62ed48a8479029cc69 actualizado correctamente.
+2026-10-22 08:39:48.715 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:48.721 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9af62ed48a8479029cc69
+2026-10-22 08:39:48.723 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9af62ed48a8479029cc69 actualizado correctamente.
+2026-10-22 08:39:53.076 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:53.081 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9af62ed48a8479029cc69
+2026-10-22 08:39:53.083 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9af62ed48a8479029cc69 actualizado correctamente.
+2026-10-22 08:39:59.930 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:39:59.935 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9af62ed48a8479029cc69
+2026-10-22 08:39:59.937 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9af62ed48a8479029cc69 actualizado correctamente.
+2026-10-22 08:46:32.201 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 08:46:32.246 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 08:46:32.260 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 08:46:32.529 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 08:46:32.808 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 08:46:32.846 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 08:46:33.442 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 08:46:43.011 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 08:46:43.058 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 08:46:54.661 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:47:11.888 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 08:47:25.623 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:47:56.417 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 6ad9af3eed48a8479029cc5f.
+2026-10-22 08:48:05.567 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 08:48:21.502 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:22.599 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:22.770 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:23.008 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:23.260 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:23.422 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:23.587 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:23.780 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:23.957 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:24.110 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:48:24.266 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:49:43.010 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 08:49:43.052 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 08:49:43.065 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 08:49:43.344 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 08:49:43.578 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 08:49:43.611 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 08:49:44.131 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 08:49:49.290 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 08:49:49.350 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 08:49:49.696 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-22 08:49:56.768 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 6ad9b2079611ed4fad8124be.
+2026-10-22 08:49:56.858 [INF] [SupplierService] [SERVICE-GETSUPPLIER] Proveedor con ID 6ad9b2079611ed4fad8124be recuperado correctamente.
+2026-10-22 08:50:06.492 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 08:50:06.683 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad9b21e9611ed4fad8124c8.
+2026-10-22 08:50:32.908 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9af62ed48a8479029cc69.
+2026-10-22 08:50:47.954 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9b21e9611ed4fad8124c8.
+2026-10-22 08:50:47.987 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9b21e9611ed4fad8124c8 actualizado correctamente.
+2026-10-22 08:50:55.010 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9b21e9611ed4fad8124c8.
+2026-10-22 08:50:55.021 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9b21e9611ed4fad8124c8
+2026-10-22 08:50:55.043 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 1abca220
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at PosgreRepository.UpdateFunkoAsync(String id, FunkoUpdateRequestDto funko, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\funkos\FunkoPostgreRepository.cs:line 158
+   at FunkoService.UpdateFunkoAsync(String id, FunkoUpdateRequestDto request, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 147
+   at FunkoController.UpdateFunko(String id, FunkoUpdateRequestDto dto, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 91
+   at lambda_method272(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 14
+2026-10-22 09:06:48.162 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 09:06:48.564 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 09:06:48.616 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 09:06:49.060 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 09:06:49.319 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 09:06:49.357 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 09:14:16.389 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 09:14:16.434 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 09:14:16.449 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 09:14:16.733 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 09:14:17.018 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 09:14:17.053 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 09:14:17.643 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 09:14:33.942 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 09:14:34.002 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:14:34.326 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-22 09:20:13.611 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 09:20:13.650 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 09:20:13.664 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 09:20:13.926 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 09:20:14.192 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 09:20:14.224 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 09:20:14.814 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 09:20:32.562 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 09:20:32.671 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:20:40.889 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:21:07.197 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:12.643 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:16.161 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:21:28.442 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:29.004 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:29.205 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:29.367 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:29.526 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:29.686 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:21:34.625 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 09:21:34.667 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 09:21:34.681 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 09:21:34.934 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 09:21:35.169 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 09:21:35.208 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 09:21:35.724 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 09:21:38.120 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 09:21:38.183 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:21:40.798 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:21:41.376 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:21:54.307 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:22:15.603 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:22:43.689 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:23:26.704 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 6ad9b2079611ed4fad8124be.
+2026-10-22 09:23:30.064 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:31.929 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:32.405 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:32.680 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:32.945 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:33.295 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:33.797 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:37.887 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:38.384 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:38.577 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:38.750 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:38.933 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 5P6N3XRTLl5.
+2026-10-22 09:23:47.818 [INF] [] [PROGRAM] Aplicada la configuración de serilog mediante 'appsettings.json'.
+2026-10-22 09:23:47.859 [INF] [] [DEPENDENCY-PROVIDER] Configurando la inyección de dependencias.
+2026-10-22 09:23:47.871 [INF] [] [DEPENDENCY-PROVIDER] Aplicando proveedor segun perfil
+2026-10-22 09:23:48.117 [DBG] [] [POSTGRE] Eliminando y recreando la base de datos
+2026-10-22 09:23:48.346 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-22 09:23:48.377 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-22 09:23:48.901 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-22 09:24:52.439 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-22 09:24:52.484 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID dHNBdMy80Gk.
+2026-10-22 09:24:52.759 [INF] [SupplierService] [SERVICE-GETSUPPLIER] Proveedor con ID dHNBdMy80Gk recuperado correctamente.
+2026-10-22 09:24:59.489 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-22 09:24:59.587 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 5 proveedores de la página 1 de 2.
+2026-10-22 09:25:12.596 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID dHNBdMy80Gk.
+2026-10-22 09:25:12.604 [INF] [SupplierService] [SUPPLIERS-GET] Proveedor con ID dHNBdMy80Gk recuperado correctamente desde la caché.
+2026-10-22 09:25:18.399 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-22 09:25:18.646 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad9ba5eb21762d437187437.
+2026-10-22 09:25:48.029 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9b21e9611ed4fad8124c8.
+2026-10-22 09:25:53.618 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9ba5eb21762d437187437.
+2026-10-22 09:25:53.662 [INF] [FunkoService] [SERVICE-UPDATE] Funko con ID 6ad9ba5eb21762d437187437 actualizado correctamente.
+2026-10-22 09:25:55.543 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9ba5eb21762d437187437.
+2026-10-22 09:25:55.551 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9ba5eb21762d437187437
+2026-10-22 09:25:55.567 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 2406e21b
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at PosgreRepository.UpdateFunkoAsync(String id, FunkoUpdateRequestDto funko, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\funkos\FunkoPostgreRepository.cs:line 158
+   at FunkoService.UpdateFunkoAsync(String id, FunkoUpdateRequestDto request, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 147
+   at FunkoController.UpdateFunko(String id, FunkoUpdateRequestDto dto, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 91
+   at lambda_method272(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 14
+2026-10-22 09:25:57.013 [DBG] [FunkoService] [SERVICE-UPDATE] Intentando actualizar el Funko con ID 6ad9ba5eb21762d437187437.
+2026-10-22 09:25:57.017 [ERR] [] [REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id 6ad9ba5eb21762d437187437
+2026-10-22 09:25:57.020 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: e9f7c017
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+   at PosgreRepository.UpdateFunkoAsync(String id, FunkoUpdateRequestDto funko, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\funkos\FunkoPostgreRepository.cs:line 158
+   at FunkoService.UpdateFunkoAsync(String id, FunkoUpdateRequestDto request, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 147
+   at FunkoController.UpdateFunko(String id, FunkoUpdateRequestDto dto, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 91
+   at lambda_method272(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 14

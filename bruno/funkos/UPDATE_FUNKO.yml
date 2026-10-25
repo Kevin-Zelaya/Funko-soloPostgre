@@ -1,0 +1,36 @@
+info:
+  name: UPDATE_FUNKO
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: http://localhost:5205/api/funkos/6ad9b21e9611ed4fad8124c8
+  body:
+    type: json
+    data: |-
+      {
+        "id": "6ad9b21e9611ed4fad8124c8",
+        "name": "asdf-ASD",
+        "franchise": "mavel",
+        "number": 123,
+        "category": {
+          "name": "Superhéroes",
+          "description": "Personajes heroicos de Marvel y otras franquicias"
+        },
+        "exclusive": false,
+        "price": 14.99,
+        "supplier": {
+          "id": "6ad9b2079611ed4fad8124be",
+          "name": "Funko Europe"
+        },
+        "rowVersion": 924
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

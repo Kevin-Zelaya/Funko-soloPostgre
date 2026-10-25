@@ -1,0 +1,343 @@
+2026-10-19 12:21:19.119 [WRN] [] [MONGODB] Eliminando la base de datos de pruebas
+2026-10-19 12:27:09.888 [WRN] [] [MONGODB] Eliminando la base de datos de pruebas
+2026-10-19 12:31:36.494 [WRN] [] [MONGODB] Eliminando la base de datos de pruebas
+2026-10-19 12:34:14.464 [WRN] [] [MONGODB] Eliminando la base de datos de pruebas
+2026-10-19 12:40:11.933 [WRN] [] [MONGODB] Inicializando datos de prueba
+2026-10-19 12:40:12.178 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-19 12:42:38.952 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-19 12:42:39.187 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-19 12:42:39.408 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-19 12:42:40.075 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 0.
+2026-10-19 12:43:12.784 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-19 12:43:12.833 [ERR] [Microsoft.EntityFrameworkCore.Update] An exception occurred in the database while saving changes for context type 'AppDbContext'.
+MongoDB.Driver.MongoBulkWriteException`1[MongoDB.Bson.BsonDocument]: A bulk write operation resulted in one or more errors. WriteErrors: [ { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: tienda.funkos index: _id_ dup key: { _id: 0 }" } ].
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWriteAsync(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.EntityFrameworkCore.Storage.MongoDatabaseWrapper.WriteBatchesAsync(IEnumerable`1 updates, IClientSessionHandle session, CancellationToken cancellationToken)
+   at MongoDB.EntityFrameworkCore.Storage.MongoDatabaseWrapper.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+MongoDB.Driver.MongoBulkWriteException`1[MongoDB.Bson.BsonDocument]: A bulk write operation resulted in one or more errors. WriteErrors: [ { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: tienda.funkos index: _id_ dup key: { _id: 0 }" } ].
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWriteAsync(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.EntityFrameworkCore.Storage.MongoDatabaseWrapper.WriteBatchesAsync(IEnumerable`1 updates, IClientSessionHandle session, CancellationToken cancellationToken)
+   at MongoDB.EntityFrameworkCore.Storage.MongoDatabaseWrapper.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-10-19 12:43:12.861 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 0f7afd26
+MongoDB.Driver.MongoBulkWriteException`1[MongoDB.Bson.BsonDocument]: A bulk write operation resulted in one or more errors. WriteErrors: [ { Category : "DuplicateKey", Code : 11000, Message : "E11000 duplicate key error collection: tienda.funkos index: _id_ dup key: { _id: 0 }" } ].
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWriteAsync(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.EntityFrameworkCore.Storage.MongoDatabaseWrapper.WriteBatchesAsync(IEnumerable`1 updates, IClientSessionHandle session, CancellationToken cancellationToken)
+   at MongoDB.EntityFrameworkCore.Storage.MongoDatabaseWrapper.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at PosgreRepository.CreateFunkoAsync(Funko funko, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\funkos\FunkoPostgreRepository.cs:line 24
+   at FunkoService.CreateFunkoAsync(FunkoCreateRequestDto funko, CancellationToken ct) in F:\Funkos\MinimalApi\services\funkos\FunkoService.cs:line 25
+   at FunkoController.CreateFunko(FunkoCreateRequestDto dto) in F:\Funkos\MinimalApi\controllers\FunkoController.cs:line 17
+   at lambda_method11(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-19 13:35:13.752 [WRN] [] [MONGODB] Inicializando datos de prueba
+2026-10-19 13:35:21.004 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-19 13:35:45.110 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-19 13:35:45.366 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-19 13:35:45.943 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method22(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method22(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-19 13:35:45.959 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: fe3d0e8d
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method22(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SupplierPostgreRepository.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\suppliers\SupplierPostgreRepository.cs:line 42
+   at SupplierService.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\services\suppliers\SuppliersService.cs:line 38
+   at SupplierController.GetPaginatedSuppliers(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\SupplierController.cs:line 40
+   at lambda_method16(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-19 13:38:58.686 [WRN] [] [MONGODB] Inicializando datos de prueba
+2026-10-19 13:39:05.228 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-19 13:39:05.374 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 1.
+2026-10-19 13:39:05.584 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-19 13:39:09.301 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-19 13:39:09.390 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-19 13:39:09.407 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 13f5d184
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SupplierPostgreRepository.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\suppliers\SupplierPostgreRepository.cs:line 42
+   at SupplierService.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\services\suppliers\SuppliersService.cs:line 38
+   at SupplierController.GetPaginatedSuppliers(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\SupplierController.cs:line 40
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-19 13:39:27.494 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-19 13:39:27.567 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-19 13:39:27.571 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: e8554274
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SupplierPostgreRepository.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\suppliers\SupplierPostgreRepository.cs:line 42
+   at SupplierService.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\services\suppliers\SuppliersService.cs:line 38
+   at SupplierController.GetPaginatedSuppliers(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\SupplierController.cs:line 40
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-19 13:39:28.163 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-19 13:39:28.181 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-19 13:39:28.185 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 015aa1e4
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method24(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SupplierPostgreRepository.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\repositories\suppliers\SupplierPostgreRepository.cs:line 42
+   at SupplierService.GetPaginatedSuppliersAsync(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\services\suppliers\SuppliersService.cs:line 38
+   at SupplierController.GetPaginatedSuppliers(Int32 pageNumber, Int32 pageSize, CancellationToken ct) in F:\Funkos\MinimalApi\controllers\SupplierController.cs:line 40
+   at lambda_method18(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-19 13:39:38.465 [DBG] [SupplierService] [SERVICE-GETSUPPLIERS] Recuperando todos los proveedores.
+2026-10-19 13:39:38.475 [ERR] [Microsoft.EntityFrameworkCore.Query] An exception occurred while iterating over the results of a query for context type 'AppDbContext'.
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method34(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method34(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+2026-10-19 13:39:38.480 [ERR] [GlobalExceptionHandler] Excepción no manejada. ErrorId: 43c2a854
+System.FormatException: Cannot deserialize a 'String' from BsonType 'Int32'.
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.DeserializeValue(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Deserialize(IBsonSerializer serializer, BsonDeserializationContext context)
+   at MongoDB.Bson.Serialization.BsonSerializationInfo.DeserializeValue(BsonValue value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.TryReadElementValue[T](BsonDocument document, BsonSerializationInfo elementSerializationInfo, T& value)
+   at MongoDB.EntityFrameworkCore.Storage.BsonBinding.GetPropertyValue[T](BsonDocument document, IReadOnlyProperty property)
+   at lambda_method34(Closure, QueryContext, BsonDocument)
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+   at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextAsync()
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SupplierPostgreRepository.GetAllSuppliersAsync(CancellationToken ct) in F:\Funkos\MinimalApi\repositories\suppliers\SupplierPostgreRepository.cs:line 13
+   at SupplierService.GetAllSuppliersAsync(CancellationToken ct) in F:\Funkos\MinimalApi\services\suppliers\SuppliersService.cs:line 19
+   at SupplierController.GetAllSuppliers(CancellationToken ct) in F:\Funkos\MinimalApi\controllers\SupplierController.cs:line 20
+   at lambda_method29(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at GlobalExceptionHandler.InvokeAsync(HttpContext context) in F:\Funkos\MinimalApi\middleware\GlobalExceptionHandler.cs:line 13
+2026-10-19 13:41:16.139 [WRN] [] [MONGODB] Inicializando datos de prueba
+2026-10-19 13:44:29.166 [WRN] [] [MONGODB] Eliminando base de datos de pruebas
+2026-10-19 13:44:29.404 [INF] [] [MONGODB] Se han insertado 10 proveedores iniciales
+2026-10-19 13:44:29.407 [INF] [] [MONGODB] Base de datos reinicializada
+2026-10-19 13:44:44.221 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-19 13:44:44.350 [DBG] [SupplierService] [SERVICE-GETSUPPLIERS] Recuperando todos los proveedores.
+2026-10-19 13:44:44.583 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para MongoDB
+2026-10-19 13:44:44.974 [INF] [SupplierService] [SERVICE-GETSUPPLIERS] Se recuperaron 10 proveedores.
+2026-10-19 13:44:58.411 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-19 13:45:03.225 [DBG] [FunkoService] [SERVICE-CREATE] Intentando crear un Funko.
+2026-10-19 13:45:03.461 [INF] [FunkoService] [SERVICE-CREATE] Funko creado correctamente con ID 6ad602bf3663d40229a55750.

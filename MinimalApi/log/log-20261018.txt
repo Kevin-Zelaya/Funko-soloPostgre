@@ -1,0 +1,23 @@
+2026-10-18 15:23:12.038 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:23:12.326 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-18 15:23:12.953 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:43:02.905 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:44:16.436 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:46:04.022 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:48:09.002 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:50:10.132 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:51:45.416 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:51:45.689 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'PosgreSql'
+2026-10-18 15:51:46.280 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:55:43.574 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:55:43.774 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'MongoDb'
+2026-10-18 15:58:45.241 [DBG] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:58:45.471 [DBG] [] [DBCONTEXT-CONFIG] Configurando entidades para el proveedor 'MongoDb'
+2026-10-18 15:58:45.808 [INF] [] [POSGRE] Eliminando y recreando la base de datos
+2026-10-18 15:58:51.815 [WRN] [Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware] Failed to determine the https port for redirect.
+2026-10-18 15:58:51.858 [DBG] [FunkoService] [SERVICE-GET] Buscando Funko con ID 1.
+2026-10-18 15:59:01.205 [DBG] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página 1 con tamaño 5.
+2026-10-18 15:59:01.276 [INF] [SupplierService] [SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron 0 proveedores de la página 1 de 0.
+2026-10-18 15:59:06.907 [DBG] [SupplierService] [SERVICE-GETSUPPLIER] Buscando proveedor con ID 1.
+2026-10-18 15:59:12.340 [DBG] [CategoryService] [CATEGORY-GETPAGINATED] Intentando obtener la lista páginada de categorias.
+2026-10-18 15:59:12.357 [INF] [CategoryService] [CATEGORY-GETPAGINATED] Retornando lista páginada de categorias.
