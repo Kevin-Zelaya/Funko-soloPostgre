@@ -70,6 +70,8 @@ public abstract class PosgreContextConfiguration
             entity.Property(s=>s.UpdateAt).IsRequired(false).HasDefaultValue(null);
             ///<summary> Fecha de eliminado </summary>
             entity.Property(s => s.DeleteAt).IsRequired(false).HasDefaultValue(null);
+            ///<summary> Fecha de eliminado </summary>
+            entity.Property(s => s.RowVersion).IsRowVersion();
             ///<summary> Filtro </summary>
             entity.HasQueryFilter(f => !f.IsDeleted);
 
@@ -101,6 +103,13 @@ public abstract class PosgreContextConfiguration
                 .ValueGeneratedOnAdd();
             ///<summary> Nombre requerido </summary>
             entity.Property(e => e.Name).IsRequired();
+            ///<summary> Control de concurrencia </summary>
+            entity.Property(c => c.RowVersion).IsRowVersion();
+            entity.Property(c =>c.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            ///<summary> Fecha de actualización valor por defecto "ahora" </summary>
+            entity.Property(c =>c.UpdatedAt).IsRequired(false).HasDefaultValue(null);
+            ///<summary> Fecha de eliminado </summary>
+            entity.Property(c => c.DeleteAT).IsRequired(false).HasDefaultValue(null);
 
 
             entity.HasData(

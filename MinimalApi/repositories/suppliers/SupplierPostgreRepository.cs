@@ -1,14 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 public class SupplierPostgreRepository(
     AppDbContext _context
 ) : ISupplierRepository, IScoped
 {
-    
-    /// <inheritdoc cref="ISupplierRepository.GetAllSuppliersAsync(CancellationToken)"/>
+     /// <inheritdoc cref="ISupplierRepository.GetAllSuppliersAsync(CancellationToken)"/>
     public async Task<List<Supplier>> GetAllSuppliersAsync(
-        CancellationToken ct = default
-    )
+        CancellationToken ct)
     {
         return await _context.Suppliers
             .AsNoTracking()
@@ -16,7 +15,7 @@ public class SupplierPostgreRepository(
     }
 
     /// <inheritdoc cref="ISupplierRepository.GetPaginatedSuppliersAsync(int, int, CancellationToken)"/>
-        public async Task<(
+    public async Task<(
         List<Supplier> items,
         int count,
         int totalPages,
@@ -25,31 +24,27 @@ public class SupplierPostgreRepository(
     )> GetPaginatedSuppliersAsync(
         int pageNumber,
         int pageSize,
-        CancellationToken ct = default
-    )
+        CancellationToken ct)
     {
         var query = _context.Suppliers
             .AsNoTracking()
             .OrderBy(s => s.Id);
 
-        // Total de proveedores disponibles
         int count = await query.CountAsync(ct);
 
-        // Número total de páginas
-        int totalPages = (int)Math.Ceiling((double)count / pageSize);
+        int totalPages = (int)Math.Ceiling(
+            (double)count / pageSize);
 
-        // Proveedores de la página solicitada
-        var items = await query
+        var response = await query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync(ct);
 
-        // Metadatos de paginación
         bool hasPreviousPage = pageNumber > 1;
         bool hasNextPage = pageNumber < totalPages;
 
         return (
-            items,
+            response,
             count,
             totalPages,
             hasPreviousPage,
@@ -60,11 +55,93 @@ public class SupplierPostgreRepository(
     /// <inheritdoc cref="ISupplierRepository.GetSupplierByIdAsync(string, CancellationToken)"/>
     public async Task<Supplier?> GetSupplierByIdAsync(
         string id,
-        CancellationToken ct = default
-    )
+        CancellationToken ct)
     {
         return await _context.Suppliers
             .AsNoTracking()
             .FirstOrDefaultAsync(s => s.Id == id, ct);
+    }
+
+    /// <inheritdoc cref="ISupplierRepository.CreateSupplierAsync(SupplierCreateRequestDto, CancellationToken)"/>
+    public async Task<Supplier> CreateSupplierAsync(
+        SupplierCreateRequestDto request,
+        CancellationToken ct)
+    {
+        var entity = request.ToEntity();
+        _context.Suppliers.Add(entity);
+        await _context.SaveChangesAsync(ct);
+
+        return entity;
+    }
+
+    /// <inheritdoc cref="ISupplierRepository.UpdateSupplierAsync(string, SupplierUpdateRequestDto, CancellationToken)"/>
+    public async Task<Supplier?> UpdateSupplierAsync(
+        string id,
+        SupplierUpdateRequestDto request,
+        CancellationToken ct)
+    {
+        var response = await _context.Suppliers
+            .FirstOrDefaultAsync(s => s.Id == id, ct);
+
+        if (response is null)
+            return null;
+
+        response.Name = request.Name;
+
+        try{
+            _context.Entry(response)
+                .Property(s => s.RowVersion)
+                .OriginalValue = request.RowVersion;
+            await _context.SaveChangesAsync(ct);
+        } catch (DbUpdateConcurrencyException ex)
+        {
+            Log.Error(
+                ex,
+                "[REPOSITORY-UPDATE] Error de concurrencia al actualizar el proveedor con ID {Id}.",
+                id);
+
+            throw;
+        }
+
+        return response;
+    }
+
+    /// <inheritdoc cref="ISupplierRepository.DeleteSupplierAsync(string, CancellationToken)"/>
+    public async Task<bool> DeleteSupplierAsync(
+        string id,
+        CancellationToken ct)
+    {
+        var entidad = await _context.Suppliers
+            .FirstOrDefaultAsync(s => s.Id == id, ct);
+
+        if (entidad is null)
+            return false;
+
+        entidad.IsDeleted = true;
+        entidad.DeleteAt = DateTime.Now;
+
+        await _context.SaveChangesAsync(ct);
+
+        return true;
+    }
+
+    /// <inheritdoc cref="ISupplierRepository.RestoreSupplierAsync(string, CancellationToken)"/>
+    public async Task<bool> RestoreSupplierAsync(
+        string id,
+        CancellationToken ct)
+    {
+        var entidad = await _context.Suppliers
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(s => s.Id == id, ct);
+
+        if (entidad is null)
+            return false;
+
+        entidad.IsDeleted = false;
+        entidad.DeleteAt = null;
+
+        await _context.SaveChangesAsync(ct);
+
+        return true;
     }
 }

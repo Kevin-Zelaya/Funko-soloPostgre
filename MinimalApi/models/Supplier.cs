@@ -1,6 +1,6 @@
 public class Supplier
 {
-    public string Id {get; set;} = string.Empty;
+    public string? Id {get; set;}
     public string Name {get; set;} = string.Empty;
     public bool IsDeleted {get; set;}
     public DateTime CreateAt {get; set;}
@@ -9,5 +9,5 @@ public class Supplier
     public ICollection<Funko> Funkos = []; 
     // Control de concurrencia
     // public uint RowVersion {get; set;}
-
+    public uint RowVersion {get; set;}
 }

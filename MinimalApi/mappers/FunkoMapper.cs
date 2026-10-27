@@ -1,6 +1,10 @@
 public static class FunkoMapper
 {
-    
+    // =========================================================
+    // Funko
+    // =========================================================
+
+    /// <summary> De dto para crear a modelo </summary>
     public static Funko ToModel(this FunkoCreateRequestDto dto) => new()
     {
         Name = dto.Name,
@@ -11,7 +15,7 @@ public static class FunkoMapper
         Price = dto.Price,
         Franchise = dto.Franchise
     };
-
+    /// <summary> De dto a modelo </summary>
     public static Funko ToModel(this FunkoDto dto) => new()
     {
         Name = dto.Name,
@@ -27,6 +31,7 @@ public static class FunkoMapper
         Franchise = dto.Franchise,
         RowVersion = dto.RowVersion
     };
+    /// <summary> De modelo a dto </summary>
     public static FunkoDto ToDto(this Funko entity) => new FunkoDto(
         Id: entity.Id,
         Name: entity.Name,
@@ -41,23 +46,46 @@ public static class FunkoMapper
         Franchise: entity.Franchise,
         Supplier: new SupplierDto(
             Id: entity.Supplier.Id,
-            Name: entity.Supplier.Name
+            Name: entity.Supplier.Name,
+            RowVersion: entity.RowVersion
         ),
         RowVersion : entity.RowVersion
     );
+    // =========================================================
+    // Suppliers
+    // =========================================================
 
-
-
-    
-
-
+    /// <summary> De modelo a dto </summary>
     public static SupplierDto ToDto(this Supplier entity) => new(
         Id: entity.Id,
-        Name: entity.Name
+        Name: entity.Name,
+        RowVersion: entity.RowVersion
     );
+    /// <summary> De modelo a dto </summary>
+    public static Supplier ToEntity(this SupplierCreateRequestDto dto) => new()
+    {
+        Name = dto.Name,
+        IsDeleted = false,
+        CreateAt = DateTime.UtcNow,
+        DeleteAt = null,
+        UpdateAt = null
+    };
+    // =========================================================
+    // Suppliers
+    // =========================================================
+
+    /// <summary> De modelo a dto </summary>
     public static CategoryDto ToDto(this Category category) => new(
         Id: category.Id,
         Name: category.Name,
         Description: category.Description
     );
+    /// <summary> De dto a modelo </summary>
+    public static Category ToEntity(this CategoryCreateRequestDto dto) => new Category{
+        Name= dto.Name,
+        Description = dto.Description
+    };
+
+    
+    
 }

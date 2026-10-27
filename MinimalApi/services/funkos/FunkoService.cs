@@ -163,7 +163,7 @@ public class FunkoService(
     /// <inheritdoc cref="IFunkoService.UpdateCategoryFromAsync(long, CategoryUpdateRequestDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(
         long id,
-        CategoryUpdateRequestDto request,
+        FunkoUpdateCategoryRequestDto request,
         CancellationToken ct = default)
     {
         string key = $"FUNKO:{id}";
@@ -189,10 +189,10 @@ public class FunkoService(
                     "[SERVICE-UPDATECATEGORY] No se encontró el Funko con ID {Id}.",
                     id));
     }
-    /// <inheritdoc cref="IFunkoService.UpdateSupplierFromFunko(long, SupplierUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoService.UpdateSupplierFromFunko(long, FunkoUpdateSupplierDto, CancellationToken)"/>
     public async Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(
         long id,
-        SupplierUpdateRequestDto request,
+        FunkoUpdateSupplierDto request,
         CancellationToken ct = default)
     {
         string key = $"FUNKO:{id}";

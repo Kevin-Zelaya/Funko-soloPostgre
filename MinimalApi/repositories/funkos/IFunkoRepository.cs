@@ -67,7 +67,7 @@ public interface IFunkoRepository
     /// <see cref="CategoryUpdateRequestDto"/>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public  Task<Funko?> UpdateCategoryFromFunkoAsync(long id, CategoryUpdateRequestDto request, CancellationToken ct = default);
+    public  Task<Funko?> UpdateCategoryFromFunkoAsync(long id, FunkoUpdateCategoryRequestDto request, CancellationToken ct = default);
     /// <summary>
     /// Actualizacion parcial, solo
     /// referencia a proveedor
@@ -76,7 +76,7 @@ public interface IFunkoRepository
     /// <param name="SupplierId">Id del proveedor</param>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public Task<Funko?> UpdateSuplierFromFunkoAsync(long id, SupplierUpdateRequestDto request, CancellationToken ct = default);
+    public Task<Funko?> UpdateSuplierFromFunkoAsync(long id, FunkoUpdateSupplierDto request, CancellationToken ct = default);
     /// <summary>
     /// Comprueba si existe el proveedor
     /// </summary>

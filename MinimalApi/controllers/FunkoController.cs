@@ -101,7 +101,7 @@ public class FunkoController(
     [HttpPatch("{id}/category")]
     public async Task<ActionResult<FunkoDto>> UpdateCategoryFromFunko(
         long id,
-        [FromBody] CategoryUpdateRequestDto dto,
+        [FromBody] FunkoUpdateCategoryRequestDto dto,
         CancellationToken ct)
     {
         var response = await _service.UpdateCategoryFromAsync(id, dto, ct);
@@ -117,7 +117,7 @@ public class FunkoController(
     [HttpPatch("{id}/supplier/{supplierId}")]
     public async Task<ActionResult<FunkoDto>> UpdateSupplierFromFunko(
         long id,
-        SupplierUpdateRequestDto request,
+        FunkoUpdateSupplierDto request,
         CancellationToken ct)
     {
         var response = await _service.UpdateSupplierFromFunko(

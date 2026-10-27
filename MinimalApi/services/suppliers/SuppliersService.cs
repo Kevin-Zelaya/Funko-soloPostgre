@@ -7,6 +7,27 @@ public class SupplierService(
 ) : ISupplierService, IScoped
 {
     // =========================================================
+    // CREATE
+    // =========================================================
+
+    /// <inheritdoc cref="ISupplierService.CreateSupplierAsync(SupplierCreateRequestDto, CancellationToken)"/>
+    public async Task<Result<SupplierDto, DomainError>> CreateSupplierAsync(
+        SupplierCreateRequestDto request,
+        CancellationToken ct = default)
+    {
+        _logger.LogDebug(
+            "[SERVICE-CREATESUPPLIER] Intentando crear un proveedor.");
+
+        var response = await _repository.CreateSupplierAsync(
+            request, ct);
+
+        return Result.Success<SupplierDto, DomainError>(response.ToDto())
+            .Tap(s => _logger.LogInformation(
+                "[SERVICE-CREATESUPPLIER] Proveedor creado correctamente con ID {Id}.",
+                s.Id));
+    }
+
+    // =========================================================
     // READ
     // =========================================================
 
@@ -33,40 +54,35 @@ public class SupplierService(
         CancellationToken ct = default)
     {
         string key = $"SUPPLIER:ALL-PAGED:{pageNumber}";
+
         _logger.LogDebug(
             "[SERVICE-GETPAGINATEDSUPPLIERS] Recuperando página {PageNumber} con tamaño {PageSize}.",
             pageNumber, pageSize);
-        if(pageNumber == 1)
+
+        if (pageNumber == 1)
         {
             var cached = await _cache.GetTAsync<PaginatedResouce<SupplierDto>>(key);
-            if(cached is not null)
+
+            if (cached is not null)
                 return Result.Success<PaginatedResouce<SupplierDto>, DomainError>(
-                    cached
-                );
+                    cached);
         }
-        // Buscar en la base de datos
+
         var response = await _repository.GetPaginatedSuppliersAsync(
             pageNumber, pageSize, ct);
-        // Transformar la respuesta 
+
         var paginatedResponse = new PaginatedResouce<SupplierDto>(
-                response.items.Select(f => f.ToDto()).ToList(),
-                response.count,
-                response.totalPages,
-                response.HasPreviousPage,
-                response.HasNextPage
-            );
-        // Guardar en caché solo si es la página 1 y contiene elementos
-        if(response.count > 0 && pageNumber == 1)
+            response.items.Select(s => s.ToDto()).ToList(),
+            response.count,
+            response.totalPages,
+            response.HasPreviousPage,
+            response.HasNextPage);
+
+        if (response.count > 0 && pageNumber == 1)
             await _cache.SetAsync(key, paginatedResponse);
-        // Retornar la respuesta
+
         return Result.Success<PaginatedResouce<SupplierDto>, DomainError>(
-            new PaginatedResouce<SupplierDto>(
-                Items: response.items.Select(s => s.ToDto()).ToList(),
-                Count: response.count,
-                TotalPages: response.totalPages,
-                HasPreviusPage: response.HasPreviousPage,
-                HasNextPage: response.HasNextPage
-            ))
+            paginatedResponse)
             .Tap(s => _logger.LogInformation(
                 "[SERVICE-GETPAGINATEDSUPPLIERS] Se recuperaron {Count} proveedores de la página {PageNumber} de {TotalPages}.",
                 s.Items.Count, pageNumber, s.TotalPages));
@@ -78,29 +94,130 @@ public class SupplierService(
         CancellationToken ct = default)
     {
         string key = $"SUPPLIER:{id}";
+
         _logger.LogDebug(
             "[SERVICE-GETSUPPLIER] Buscando proveedor con ID {Id}.", id);
-        // 1. Buscar en la base de caché
+
         var cached = await _cache.GetTAsync<Supplier>(key);
-        if(cached is not null)
-            return Result.Success<SupplierDto, DomainError>(
-                cached.ToDto()
-            )
-            .Tap(_ => _logger.LogInformation("[SUPPLIERS-GET] Proveedor con ID {id} recuperado correctamente desde la caché.", id));
-        // 2. Buscar en la base de datos.
+
+        if (cached is not null)
+            return Result.Success<SupplierDto, DomainError>(cached.ToDto())
+                .Tap(_ => _logger.LogInformation(
+                    "[SERVICE-GETSUPPLIER] Proveedor con ID {Id} recuperado desde la caché.",
+                    id));
+
         var response = await _repository.GetSupplierByIdAsync(id, ct);
-        // 3. Guardar en la caché
-        if(response is not null)
+
+        if (response is not null)
             await _cache.SetAsync(key, response);
+
         return response is not null
             ? Result.Success<SupplierDto, DomainError>(response.ToDto())
                 .Tap(s => _logger.LogInformation(
                     "[SERVICE-GETSUPPLIER] Proveedor con ID {Id} recuperado correctamente.",
-                    id))
+                    s.Id))
             : Result.Failure<SupplierDto, DomainError>(
                 NotFoundError.FromResource("Supplier", id))
                 .Tap(_ => _logger.LogWarning(
                     "[SERVICE-GETSUPPLIER] No se encontró el proveedor con ID {Id}.",
+                    id));
+    }
+
+    // =========================================================
+    // UPDATE
+    // =========================================================
+
+    /// <inheritdoc cref="ISupplierService.UpdateSupplierAsync(string, SupplierUpdateRequestDto, CancellationToken)"/>
+    public async Task<Result<SupplierDto, DomainError>> UpdateSupplierAsync(
+        string id,
+        SupplierUpdateRequestDto request,
+        CancellationToken ct = default)
+    {
+        string key = $"SUPPLIER:{id}";
+
+        _logger.LogDebug(
+            "[SERVICE-UPDATESUPPLIER] Intentando actualizar el proveedor con ID {Id}.",
+            id);
+
+        var response = await _repository.UpdateSupplierAsync(id, request, ct);
+
+        if (response is not null)
+        {
+            await _cache.RemoveAsync(key);
+            await _cache.RemoveAsync("SUPPLIER:ALL-PAGED:1");
+        }
+
+        return response is not null
+            ? Result.Success<SupplierDto, DomainError>(response.ToDto())
+                .Tap(s => _logger.LogInformation(
+                    "[SERVICE-UPDATESUPPLIER] Proveedor con ID {Id} actualizado correctamente.",
+                    s.Id))
+            : Result.Failure<SupplierDto, DomainError>(
+                NotFoundError.FromResource("Supplier", id))
+                .Tap(_ => _logger.LogWarning(
+                    "[SERVICE-UPDATESUPPLIER] No se encontró el proveedor con ID {Id}.",
+                    id));
+    }
+
+    // =========================================================
+    // DELETE
+    // =========================================================
+
+    /// <inheritdoc cref="ISupplierService.DeleteSupplierAsync(string, CancellationToken)"/>
+    public async Task<Result<bool, DomainError>> DeleteSupplierAsync(
+        string id,
+        CancellationToken ct = default)
+    {
+        string key = $"SUPPLIER:{id}";
+
+        _logger.LogDebug(
+            "[SERVICE-DELETESUPPLIER] Intentando eliminar el proveedor con ID {Id}.",
+            id);
+
+        var response = await _repository.DeleteSupplierAsync(id, ct);
+
+        if (response)
+        {
+            await _cache.RemoveAsync(key);
+            await _cache.RemoveAsync("SUPPLIER:ALL-PAGED:1");
+        }
+
+        return response
+            ? Result.Success<bool, DomainError>(true)
+                .Tap(_ => _logger.LogInformation(
+                    "[SERVICE-DELETESUPPLIER] Proveedor con ID {Id} eliminado correctamente.",
+                    id))
+            : Result.Failure<bool, DomainError>(
+                NotFoundError.FromResource("Supplier", id))
+                .Tap(_ => _logger.LogWarning(
+                    "[SERVICE-DELETESUPPLIER] No se encontró el proveedor con ID {Id}.",
+                    id));
+    }
+
+    // =========================================================
+    // RESTORE
+    // =========================================================
+
+    /// <inheritdoc cref="ISupplierService.RestoreSupplierAsync(string, CancellationToken)"/>
+    public async Task<Result<bool, DomainError>> RestoreSupplierAsync(
+        string id,
+        CancellationToken ct = default)
+    {
+        _logger.LogDebug(
+            "[SERVICE-RESTORESUPPLIER] Intentando restaurar el proveedor con ID {Id}.",
+            id);
+
+        var response = await _repository.RestoreSupplierAsync(id, ct);
+
+        return response
+            ? Result.Success<bool, DomainError>(true)
+                .Tap(_ => _logger.LogInformation(
+                    "[SERVICE-RESTORESUPPLIER] Proveedor con ID {Id} restaurado correctamente.",
+                    id))
+            : Result.Failure<bool, DomainError>(
+                NotFoundError.FromResource("Supplier", id))
+                .Tap(_ => _logger.LogWarning(
+                    "[SERVICE-RESTORESUPPLIER] No se encontró el proveedor eliminado con ID {Id}.",
                     id));
     }
 }

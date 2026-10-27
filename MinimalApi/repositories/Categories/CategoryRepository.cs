@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 public class CategoryPostgreRepository(
     AppDbContext _context
@@ -57,7 +58,68 @@ public class CategoryPostgreRepository(
     )
     {
         return await _context.Categories
-                        .AsNoTracking()
-                        .FirstOrDefaultAsync(c => c.Name == name, ct);
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Name == name, ct);
+    }
+    /// <inheritdoc cref="ICategoryRepository.CreateCategoryAsync(CategoryCreateRequestDto, CancellationToken)"/>
+    public async Task<Category> CreateCategoryAsync(
+        CategoryCreateRequestDto request, 
+        CancellationToken ct)
+    {
+        var entidad = request.ToEntity();
+        _context.Categories.Add(entidad);
+        await _context.SaveChangesAsync(ct);
+        return entidad;
+    }
+    /// <inheritdoc cref="ICategoryRepository.DeleteCategoryAsync(Guid, CancellationToken)"/>
+    public async Task<bool> DeleteCategoryAsync(
+        Guid id,
+        CancellationToken ct)
+    {
+        var entidad = await _context.Categories
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Id == id);
+        entidad.IsDelete = true;
+        entidad.DeleteAT = DateTime.Now;
+        await _context.SaveChangesAsync(ct);
+        return true;
+    }
+    /// <inheritdoc cref="ICategoryRepository.RestoreCategoryAsync(Guid, CancellationToken)"/>
+    public async Task<bool> RestoreCategoryAsync(
+        Guid id,
+        CancellationToken ct)
+    {
+        var entidad = await _context.Categories
+            .AsNoTracking()
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(c => c.Id == id);
+        entidad.IsDelete = false;
+        await _context.SaveChangesAsync(ct);
+        return true;
+    }
+    /// <inheritdoc cref="ICategoryRepository.UpdateCategoryAsync(Guid, CategoryUpdateRequestDto, CancellationToken)"/>
+    public async Task<Category> UpdateCategoryAsync(
+        Guid id,
+        CategoryUpdateRequestDto request,
+        CancellationToken ct
+    )
+    {
+        var response = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
+        if(response is null) return null;
+        response.Name = request.Name;
+        response.Description = request.Description;
+        response.UpdatedAt = DateTime.Now;
+        try
+        {
+            _context.Entry(response)
+                .Property(f => f.RowVersion)
+                .OriginalValue = request.RowVersion;
+            await _context.SaveChangesAsync(ct);
+        } catch(DbUpdateConcurrencyException ex)
+        {
+            Log.Error("[REPOSITORY-UPDATE] Error de concurrencia, al actualizar el funko con id {id}", id);
+            throw ex;
+        }
+        return response;
     }
 }

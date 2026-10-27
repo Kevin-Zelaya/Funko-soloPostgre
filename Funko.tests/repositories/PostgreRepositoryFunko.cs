@@ -65,15 +65,16 @@ public class PosgreRepositoryTests
                 Name = "Superheroes",
                 Description = "Funko de superheroes"
             },
-            Supplier = CrearSupplierValido()
+            Supplier = CrearSupplierValido(),
+            RowVersion = 954
         };
     }
-    private static CategoryUpdateRequestDto CrearCategoryUpdateRequestValido()
+    private static FunkoUpdateCategoryRequestDto CrearCategoryUpdateRequestValido(uint row)
     {
-        return new CategoryUpdateRequestDto
+        return new FunkoUpdateCategoryRequestDto
         (
-            Name : "Anime",
-            Description : "Categoría de figuras de anime"
+            Id : Guid.Parse("10000000-0000-0000-0000-000000000000"),
+            RowVersion : row
         );
     }
     private static Supplier CrearSupplierValido()
@@ -139,7 +140,7 @@ public class PosgreRepositoryTests
     public async Task ExistSupplierByIdAsync_NoExiste_RetornaFalse()
     {
         // Arrange
-        int id = 999;
+        string id = "hu8555awe";
 
         // Act
         var resultado = await _repository.ExistSupplierByIdAsync(id);
@@ -205,12 +206,16 @@ public class PosgreRepositoryTests
     {
         // Arrange
         int id = 999;
-        int supplierId = 1;
+        var supplier = new FunkoUpdateSupplierDto
+        (
+            Id : "dsfko65es",
+            RowVersion : 954
+        );
 
         // Act
         var resultado = await _repository.UpdateSuplierFromFunkoAsync(
             id,
-            supplierId
+            supplier
         );
 
         // Assert
@@ -275,7 +280,7 @@ public class PosgreRepositoryTests
         _context.Funkos.Add(funko);
         await _context.SaveChangesAsync();
 
-        var request = CrearFunkoUpdateRequestValido();
+        var request = CrearFunkoUpdateRequestValido(funko.RowVersion);
 
         // Act
         var resultado = await _repository.UpdateFunkoAsync(
@@ -291,7 +296,7 @@ public class PosgreRepositoryTests
         Assert.That(resultado.Exclusive, Is.EqualTo(request.Exclusive));
         Assert.That(resultado.Price, Is.EqualTo(request.Price));
     }
-    private static FunkoUpdateRequestDto CrearFunkoUpdateRequestValido()
+    private static FunkoUpdateRequestDto CrearFunkoUpdateRequestValido(uint row)
     {
         return new FunkoUpdateRequestDto
         (
@@ -300,7 +305,8 @@ public class PosgreRepositoryTests
             Franchise : "Marvel",
             Number : 200,
             Exclusive : true,
-            Price : (double)19.99m
+            Price : (double)19.99m,
+            RowVersion : row
         );
     }
     [Test]
@@ -312,7 +318,14 @@ public class PosgreRepositoryTests
         _context.Funkos.Add(funko);
         await _context.SaveChangesAsync();
 
-        var request = CrearCategoryUpdateRequestValido();
+        var request = CrearCategoryUpdateRequestValido(funko.RowVersion);
+        var save = new Category
+        {
+            Id = request.Id,
+            Name = "prueba",
+            Description = "prueba"
+        };
+        _context.Categories.Add(save);
 
         // Act
         var resultado = await _repository.UpdateCategoryFromFunkoAsync(
@@ -322,11 +335,6 @@ public class PosgreRepositoryTests
 
         // Assert
         Assert.That(resultado, Is.Not.Null);
-        Assert.That(resultado!.Category.Name, Is.EqualTo(request.Name));
-        Assert.That(
-            resultado.Category.Description,
-            Is.EqualTo(request.Description)
-        );
     }
 
     [Test]
@@ -336,16 +344,20 @@ public class PosgreRepositoryTests
         var supplier = CrearSupplierValido();
         _context.Suppliers.Add(supplier);
         await _context.SaveChangesAsync();
-
+        
         var funko = CrearFunkoValido();
 
         _context.Funkos.Add(funko);
         await _context.SaveChangesAsync();
+    var updateSupplier = new FunkoUpdateSupplierDto(
+                Id: supplier.Id,
+                RowVersion: funko.RowVersion
+            );
 
         // Act
         var resultado = await _repository.UpdateSuplierFromFunkoAsync(
             funko.Id,
-            supplier.Id
+            updateSupplier
         );
 
         // Assert

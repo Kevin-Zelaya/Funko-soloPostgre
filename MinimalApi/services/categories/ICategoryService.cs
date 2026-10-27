@@ -1,5 +1,9 @@
+
 using CSharpFunctionalExtensions;
 
+/// <summary>
+/// Define las operaciones de servicio para la gestión de categorías.
+/// </summary>
 public interface ICategoryService
 {
     /// <summary>
@@ -31,4 +35,46 @@ public interface ICategoryService
         int pageNumber,
         int pageSize,
         CancellationToken ct);
+
+    /// <summary>
+    /// Crea una nueva categoría.
+    /// </summary>
+    /// <param name="request">Datos necesarios para crear la categoría.</param>
+    /// <param name="ct">Token de cancelación.</param>
+    /// <returns>Categoría creada o un error de dominio.</returns>
+    Task<Result<CategoryDto, DomainError>> CreateCategoryAsync(
+        CategoryCreateRequestDto request,
+        CancellationToken ct = default);
+
+    /// <summary>
+    /// Actualiza los datos de una categoría existente.
+    /// </summary>
+    /// <param name="id">Identificador de la categoría que se desea actualizar.</param>
+    /// <param name="request">Nuevos datos de la categoría.</param>
+    /// <param name="ct">Token de cancelación.</param>
+    /// <returns>Categoría actualizada o un error de dominio.</returns>
+    Task<Result<CategoryDto, DomainError>> UpdateCategoryAsync(
+        Guid id,
+        CategoryUpdateRequestDto request,
+        CancellationToken ct = default);
+
+    /// <summary>
+    /// Elimina lógicamente una categoría.
+    /// </summary>
+    /// <param name="id">Identificador de la categoría que se desea eliminar.</param>
+    /// <param name="ct">Token de cancelación.</param>
+    /// <returns>true si la categoría se eliminó correctamente o un error de dominio.</returns>
+    Task<Result<bool, DomainError>> DeleteCategoryAsync(
+        Guid id,
+        CancellationToken ct = default);
+
+    /// <summary>
+    /// Restaura una categoría eliminada lógicamente.
+    /// </summary>
+    /// <param name="id">Identificador de la categoría que se desea restaurar.</param>
+    /// <param name="ct">Token de cancelación.</param>
+    /// <returns>true si la categoría se restauró correctamente o un error de dominio.</returns>
+    Task<Result<bool, DomainError>> RestoreCategoryAsync(
+        Guid id,
+        CancellationToken ct = default);
 }

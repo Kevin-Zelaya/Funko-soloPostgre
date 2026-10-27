@@ -59,4 +59,84 @@ public class CategoryController(
             ? Ok(response.Value)
             : NotFound(response.Error);
     }
+
+    // =========================================================
+    // CREATE
+    // =========================================================
+
+    /// <summary>
+    /// Crea una nueva categoría.
+    /// </summary>
+    [HttpPost]
+    public async Task<ActionResult> CreateCategory(
+        [FromBody] CategoryCreateRequestDto request,
+        CancellationToken ct)
+    {
+        var response = await _service.CreateCategoryAsync(request, ct);
+
+        return response.IsSuccess
+            ? CreatedAtAction(
+                nameof(GetCategoryByName),
+                new { name = response.Value.Name },
+                response.Value)
+            : BadRequest(response.Error);
+    }
+
+    // =========================================================
+    // UPDATE
+    // =========================================================
+
+    /// <summary>
+    /// Actualiza una categoría existente.
+    /// </summary>
+    [HttpPut("{id:guid}")]
+    public async Task<ActionResult> UpdateCategory(
+        Guid id,
+        [FromBody] CategoryUpdateRequestDto request,
+        CancellationToken ct)
+    {
+        var response = await _service.UpdateCategoryAsync(id, request, ct);
+
+        return response.IsSuccess
+            ? Ok(response.Value)
+            : BadRequest(response.Error);
+    }
+
+    // =========================================================
+    // DELETE
+    // =========================================================
+
+    /// <summary>
+    /// Elimina lógicamente una categoría.
+    /// </summary>
+    [HttpDelete("{id:guid}")]
+    public async Task<ActionResult> DeleteCategory(
+        Guid id,
+        CancellationToken ct)
+    {
+        var response = await _service.DeleteCategoryAsync(id, ct);
+
+        return response.IsSuccess
+            ? NoContent()
+            : NotFound(response.Error);
+    }
+
+    // =========================================================
+    // RESTORE
+    // =========================================================
+
+    /// <summary>
+    /// Restaura una categoría eliminada.
+    /// </summary>
+    [HttpPatch("{id:guid}/restore")]
+    public async Task<ActionResult> RestoreCategory(
+        Guid id,
+        CancellationToken ct)
+    {
+        var response = await _service.RestoreCategoryAsync(id, ct);
+
+        return response.IsSuccess
+            ? NoContent()
+            : NotFound(response.Error);
+    }
 }

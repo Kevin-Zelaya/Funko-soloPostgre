@@ -145,14 +145,14 @@ public class PosgreRepository(
     /// <inheritdoc cref="IFunkoRepository.UpdateCategoryFromFunkoAsync(long, CategoryUpdateRequestDto, CancellationToken)"/>
     public async Task<Funko?> UpdateCategoryFromFunkoAsync(
         long id,
-        CategoryUpdateRequestDto request,
+        FunkoUpdateCategoryRequestDto request,
         CancellationToken ct = default
     )
     {
         var response = await _context.Funkos
             .Include(f => f.Supplier)
             .FirstOrDefaultAsync(f => f.Id == id, ct);
-        response.CategoryId = request.Id;
+        response?.CategoryId = request.Id;
 
         if (response is null)
             return null;
@@ -171,10 +171,10 @@ public class PosgreRepository(
 
         return response;
     }
-    /// <inheritdoc cref="IFunkoRepository.UpdateSuplierFromFunkoAsync(long, SupplierUpdateRequestDto, CancellationToken)"/>
+    /// <inheritdoc cref="IFunkoRepository.UpdateSuplierFromFunkoAsync(long, FunkoUpdateSupplierDto, CancellationToken)"/>
     public async Task<Funko?> UpdateSuplierFromFunkoAsync(
         long id,
-        SupplierUpdateRequestDto request,
+        FunkoUpdateSupplierDto request,
         CancellationToken ct = default
     )
     {

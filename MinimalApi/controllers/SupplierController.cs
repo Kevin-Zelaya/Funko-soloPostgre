@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -6,6 +7,28 @@ public class SupplierController(
     ISupplierService _service
 ) : ControllerBase
 {
+    // =========================================================
+    // CREATE
+    // =========================================================
+
+    /// <summary>
+    /// Crea un nuevo proveedor.
+    /// </summary>
+    [HttpPost]
+    public async Task<ActionResult> CreateSupplier(
+        [FromBody] SupplierCreateRequestDto request,
+        CancellationToken ct)
+    {
+        var response = await _service.CreateSupplierAsync(request, ct);
+
+        return response.IsSuccess
+                ? CreatedAtAction(
+                nameof(GetSupplierById),
+                new { controller = "Supplier", id = response.Value.Id },
+                response.Value)
+            : BadRequest(response.Error);
+    }
+
     // =========================================================
     // READ
     // =========================================================
@@ -57,6 +80,64 @@ public class SupplierController(
 
         return response.IsSuccess
             ? Ok(response.Value)
+            : NotFound(response.Error);
+    }
+
+    // =========================================================
+    // UPDATE
+    // =========================================================
+
+    /// <summary>
+    /// Actualiza un proveedor existente.
+    /// </summary>
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateSupplier(
+        string id,
+        [FromBody] SupplierUpdateRequestDto request,
+        CancellationToken ct)
+    {
+        var response = await _service.UpdateSupplierAsync(id, request, ct);
+
+        return response.IsSuccess
+            ? Ok(response.Value)
+            : NotFound(response.Error);
+    }
+
+    // =========================================================
+    // DELETE
+    // =========================================================
+
+    /// <summary>
+    /// Elimina lógicamente un proveedor.
+    /// </summary>
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteSupplier(
+        string id,
+        CancellationToken ct)
+    {
+        var response = await _service.DeleteSupplierAsync(id, ct);
+
+        return response.IsSuccess
+            ? NoContent()
+            : NotFound(response.Error);
+    }
+
+    // =========================================================
+    // RESTORE
+    // =========================================================
+
+    /// <summary>
+    /// Restaura un proveedor eliminado lógicamente.
+    /// </summary>
+    [HttpPatch("{id}/restore")]
+    public async Task<ActionResult> RestoreSupplier(
+        string id,
+        CancellationToken ct)
+    {
+        var response = await _service.RestoreSupplierAsync(id, ct);
+
+        return response.IsSuccess
+            ? NoContent()
             : NotFound(response.Error);
     }
 }

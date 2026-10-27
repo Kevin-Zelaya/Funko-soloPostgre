@@ -12,20 +12,24 @@ public class MappersTests
             Number : 100,
             Exclusive : false,
             Price : (double)15.99m,
-            Category : new CategoryUpdateRequestDto
-            (
-                Name : "Superheroes",
-                Description : "Funko de superheroes"
-            ),
-            SupplierId : 1
+            CategoryId : Guid.Parse("10000000-0000-0000-0000-000000000000"),
+            SupplierId : "dsaf5623d"
             
         );
         // Arc
         var funko = create.ToModel();
         funko.Supplier =  new Supplier
-            {
-                Name = "Proveedor de prueba"
-            };
+        {
+            Id = "4563asdfe",
+            Name = "Proveedor de prueba",
+            RowVersion = 954
+        };
+        funko.Category = new Category
+        {
+            Id = Guid.Parse("10000000-0000-0000-0000-000000000000"),
+            Name = "Prueba",
+            RowVersion = 954
+        };
         var dto = funko.ToDto();
         var supplier = funko.Supplier.ToDto();
         var category = funko.Category.ToDto();

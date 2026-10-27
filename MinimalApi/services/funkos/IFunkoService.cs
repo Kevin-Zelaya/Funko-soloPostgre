@@ -39,7 +39,7 @@ public interface IFunkoService
     /// <see cref="CategoryUpdateRequestDto"/>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(long id, CategoryUpdateRequestDto request, CancellationToken ct = default);
+    public Task<Result<FunkoDto, DomainError>> UpdateCategoryFromAsync(long id, FunkoUpdateCategoryRequestDto request, CancellationToken ct = default);
     /// <summary>
     /// Actualizar proveedor de
     /// funko
@@ -48,7 +48,7 @@ public interface IFunkoService
     /// <param name="SupplierId">Id del proveedor</param>
     /// <param name="ct">Token de cancelación</param>
     /// <returns>Funko actualizado</returns>
-    public Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(long id, SupplierUpdateRequestDto SupplierId, CancellationToken ct = default);
+    public Task<Result<FunkoDto, DomainError>> UpdateSupplierFromFunko(long id, FunkoUpdateSupplierDto SupplierId, CancellationToken ct = default);
     /// <summary>
     /// Obtener lista completa de funkos
     /// se utiliza para pruebas, en producción
