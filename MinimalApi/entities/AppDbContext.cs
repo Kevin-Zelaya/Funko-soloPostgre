@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
+    public DbSet<User> Users {get; set;}
     public DbSet<Funko> Funkos {get; set;}
     public DbSet<Supplier> Suppliers {get; set;}
     public DbSet<Category> Categories {get; set;}

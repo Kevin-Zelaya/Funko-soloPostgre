@@ -151,6 +151,33 @@ public abstract class PosgreContextConfiguration
                 }
             );
         });
+        modelBuilder.Entity<User>(entity =>
+        {
+            ///<summary> Index como llave </summary>
+           entity.HasKey(u => u.Id);
+            ///<summary> indice en email ya que se utiliza mucho en consultas </summary>
+           entity.HasIndex(u => u.Email);
+            ///<summary> Nombre de usuario requerido y con un másximo largo de 255 </summary>
+           entity.Property(u => u.Username).IsRequired().HasMaxLength(255);
+            ///<summary> Email de usuario requerido y con un másximo largo de 255 </summary>
+           entity.Property(u => u.Email).IsRequired().HasMaxLength(255);
+            ///<summary> Contraseña hasheada de usuario requerido y con un másximo largo de 255 </summary>
+           entity.Property(u => u.PasswordHash).IsRequired().HasMaxLength(255);
+            ///<summary> Contraseña hasheada de usuario requerido y con un másximo largo de 255 </summary>
+           entity.Property(u => u.PasswordHash).IsRequired().HasMaxLength(255);
+            ///<summary> Rol del usuario con un másximo largo de 50 </summary>
+           entity.Property(u => u.Role).HasMaxLength(50);
+            ///<summary> Eliminado falso por defecto </summary>
+           entity.Property(u => u.IsDeleted).HasDefaultValue(false);
+            ///<summary> Última conexión null por defecto </summary>
+           entity.Property(u => u.LastLoginAt).HasDefaultValue(null);
+            ///<summary> Última conexión null por defecto </summary>
+           entity.Property(u => u.LastLoginAt).HasDefaultValue(null);
+
+            // Los otros datos no los utilizo de momento
+            
+
+        });
     }
     
 }

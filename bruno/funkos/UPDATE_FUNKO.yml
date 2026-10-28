@@ -5,26 +5,22 @@ info:
 
 http:
   method: PUT
-  url: http://localhost:5205/api/funkos/6ad9b21e9611ed4fad8124c8
+  url: http://localhost:5205/api/funkos/1
   body:
     type: json
     data: |-
       {
-        "id": "6ad9b21e9611ed4fad8124c8",
-        "name": "asdf-ASD",
-        "franchise": "mavel",
+        "id": 1,
+        "name": "CÜirrhaa",
+        "franchise": "Marvel",
         "number": 123,
-        "category": {
-          "name": "Superhéroes",
-          "description": "Personajes heroicos de Marvel y otras franquicias"
-        },
         "exclusive": false,
         "price": 14.99,
         "supplier": {
-          "id": "6ad9b2079611ed4fad8124be",
+          "id": "2Sa4oQYAk6w",
           "name": "Funko Europe"
         },
-        "rowVersion": 924
+        "rowVersion": 1002
       }
   auth: inherit
 

@@ -21,6 +21,7 @@ builder.Services.AddControllers();
 /// =============== 
 DependencyProvider.Configure(
     builder.Services);
+builder.Services.AddAuthenticationJwt(builder.Configuration);
 
 var app = builder.Build();
 app.UseHttpsRedirection();
