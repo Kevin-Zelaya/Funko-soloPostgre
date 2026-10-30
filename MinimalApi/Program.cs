@@ -1,4 +1,5 @@
 using Serilog;
+using ProductosEFCore.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +24,14 @@ DependencyProvider.Configure(
     builder.Services);
 builder.Services.AddAuthenticationJwt(builder.Configuration);
 
+// REGISTRAR EL STORAGE EN EL CONTENEDOR DE DEPENDENCIAS 
+builder.Services.AddScoped<IStorageService, StorageService>();
+
 var app = builder.Build();
 app.UseHttpsRedirection();
+
+// Permite servir las imágenes desde wwwroot
+app.UseStaticFiles();
 
 // ======= Configuración de open api ========== 
 app.MapOpenApi();
